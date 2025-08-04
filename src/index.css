@@ -1,5 +1,20 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-body{
-    background-color: #333333;
+@font-face {
+    font-display: swap;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    src: url('./assets/fonts/Open Sans/open-sans-v43-latin-800.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@theme {
+    --color-csblack: #1F1F1F;
+    --color-cswhite: #FFFFFF;
+    --color-csmain: #333333;
+    --color-csred: #E65F78;
+    --font-mainfont: "Open Sans";
+    --width-cscontainer: 68.33%;
 }

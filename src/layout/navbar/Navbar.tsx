@@ -1,6 +1,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import MyPhoto from '../../assets/images/1730584660411-02.jpeg'
+import ThemeToggle from '../../Theme'
 
 const navigation = [
     { name: 'About', href: '#', current: true },
@@ -49,6 +50,8 @@ export default function Navbar() {
 
                     <div className="flex flex-1 items-center !justify-end  sm:items-stretch sm:justify-start">
 
+                        <ThemeToggle />
+                       
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
