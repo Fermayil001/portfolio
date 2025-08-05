@@ -1,7 +1,6 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import MyPhoto from '../../assets/images/1730584660411-02.jpeg'
-import ThemeToggle from '../../Theme'
+import { ThemeToggle } from '../../Theme'
 
 const navigation = [
     { name: 'About', href: '#', current: true },
@@ -16,42 +15,31 @@ function classNames(...classes: any) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Navbar() {
+interface NavbarProps {
+    darkMode: boolean;
+    toggleDarkMode: () => void;
+}
+
+export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
     return (
         <Disclosure as="nav" className="bg-csblack">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                <div className="relative  flex h-16 items-center justify-between">
+                <div className="relative flex h-16 items-center justify-between">
+                    {/* Mobile Menu Button */}
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                        {/* Mobile menu button*/}
                         <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-[#FFFFFF] hover:bg-[#E65F78] hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
-                            <span className="absolute -inset-0.5" />
-                            <span className="sr-only">Open main menu</span>
-                            <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
-                            <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-open:block" />
+                            <Bars3Icon className="block size-6 group-data-open:hidden" />
+                            <XMarkIcon className="hidden size-6 group-data-open:block" />
                         </DisclosureButton>
                     </div>
 
-                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
-
-                        {/* Profile dropdown */}
-                        <div className="relative ml-3">
-                            <div className="relative flex rounded-full bg-gray-800 text-sm focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800">
-                                <span className="absolute -inset-1.5" />
-                                <img
-                                    alt=""
-                                    src={MyPhoto}
-                                    className="size-8 rounded-full"
-                                />
-                            </div>
-
-                        </div>
+                    {/* Right side (Avatar + Toggle) */}
+                    <div>
+                        <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
                     </div>
 
-                    <div className="flex flex-1 items-center !justify-end  sm:items-stretch sm:justify-start">
-
-                        <ThemeToggle />
-
+                    {/* Navigation */}
+                    <div className="flex flex-1 items-center justify-end sm:items-stretch sm:justify-end">
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
@@ -60,7 +48,9 @@ export default function Navbar() {
                                         href={`#${item.href}`}
                                         aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
-                                            item.current ? 'bg-[#E65F78] text-white' : 'text-[#FFFFFF] hover:bg-[#E65F78] hover:text-white',
+                                            item.current
+                                                ? 'bg-[#E65F78] text-white'
+                                                : 'text-[#FFFFFF] hover:bg-[#E65F78] hover:text-white',
                                             'rounded-md px-3 py-2 text-sm font-medium',
                                         )}
                                     >
@@ -70,7 +60,6 @@ export default function Navbar() {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -83,7 +72,9 @@ export default function Navbar() {
                             href={item.href}
                             aria-current={item.current ? 'page' : undefined}
                             className={classNames(
-                                item.current ? 'bg-[#E65F78] text-white' : 'text-gray-300 hover:bg-[#E65F78] hover:text-white',
+                                item.current
+                                    ? 'bg-[#E65F78] text-white'
+                                    : 'text-gray-300 hover:bg-[#E65F78] hover:text-white',
                                 'block rounded-md px-3 py-2 text-base font-medium',
                             )}
                         >
@@ -93,5 +84,5 @@ export default function Navbar() {
                 </div>
             </DisclosurePanel>
         </Disclosure>
-    )
+    );
 }

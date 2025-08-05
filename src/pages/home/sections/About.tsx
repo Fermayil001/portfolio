@@ -19,14 +19,14 @@ const About = () => {
     return (
         <Section id="about">
             <Container title="About Me">
-                <div className="flex gap-x-10">
-                    <span className="!w-[242px] h-[242px] relative border">
+                <div className="flex gap-x-10 mx-auto w-fit">
+                    <span className="w-[242px] h-[242px] relative border">
                         <img
                             className="!w-[242px] h-[242px] object-cover absolute top-[-11.44px] left-[-8.71px]"
                             src={Myphoto} alt="Fermayil Hesenov"
                         />
                     </span>
-                    <div className="w-[639px] flex justify-between flex-col">
+                    <div className="w-full md:w-[639px] flex justify-between flex-col">
                         <p className="text-base leading-[170%] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet vestibulum felis. Vivamus facilisis ligula id fringilla gravida. Suspendisse ultricies sollicitudin lacus, et rutrum nunc bibendum sed.  Donec tincidunt tellus sed libero ultricies, eu semper enim molestie. Etiam lorem quam, tincidunt nec malesuada eu, interdum nec leo. </p>
                         <div className="flex justify-between">
                             <div className=" space-y-2.5">

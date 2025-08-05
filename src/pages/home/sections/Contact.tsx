@@ -17,7 +17,7 @@ const Contact = () => {
     return (
         <Section>
             <Container title='Contact'>
-                <div className='w-full max-w-[544px] space-y-[90px] flex flex-col items-center'>
+                <div className='w-full mx-auto max-w-[544px] space-y-[90px] flex flex-col items-center'>
                     <p className='text-[20px] font-mainfont text-center'>
                         I am currently seeking employment, so if you have a job or project offer, or if you need more information, please do not hesitate to contact me.
                     </p>

@@ -18,7 +18,7 @@ const Hero = () => {
                     <h5 className='text-2xl text-light dark:text-cswhite leading-6 font-light'>I design and build things on the internet.</h5>
                 </div>
             </div>
-            <div className='h-[100px] w-[100px] cursor-pointer mt-[205px]'>
+            <div className='h-[100px] w-[100px] cursor-pointer pt-[205px]'>
                 <a href='#about'>
                     <HiChevronDoubleDown size={32} className='text-csblack dark:text-cswhite' />
                 </a>
