@@ -6,7 +6,7 @@ import ThemeToggle from '../../Theme'
 const navigation = [
     { name: 'About', href: '#', current: true },
     { name: 'Experience', href: '#', current: false },
-    { name: 'Skill', href: '#', current: false },
+    { name: 'Skill', href: 'skills', current: false },
     { name: 'Portfolio', href: '#', current: false },
     { name: 'Contact', href: '#', current: false },
     { name: 'Resume', href: '#', current: false },
@@ -18,7 +18,7 @@ function classNames(...classes: any) {
 
 export default function Navbar() {
     return (
-        <Disclosure as="nav" className="bg-[#1F1F1F]">
+        <Disclosure as="nav" className="bg-csblack">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative  flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -51,13 +51,13 @@ export default function Navbar() {
                     <div className="flex flex-1 items-center !justify-end  sm:items-stretch sm:justify-start">
 
                         <ThemeToggle />
-                       
+
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
                                     <a
                                         key={item.name}
-                                        href={item.href}
+                                        href={`#${item.href}`}
                                         aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
                                             item.current ? 'bg-[#E65F78] text-white' : 'text-[#FFFFFF] hover:bg-[#E65F78] hover:text-white',

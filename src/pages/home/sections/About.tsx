@@ -17,7 +17,7 @@ const About = () => {
     const rightSide = PersonalInfo.slice(3);
 
     return (
-        <Section>
+        <Section id="about">
             <Container title="About Me">
                 <div className="flex gap-x-10">
                     <span className="!w-[242px] h-[242px] relative border">

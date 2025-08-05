@@ -1,34 +1,61 @@
-import ReactIcon from '../assets/icons/React.svg'
-import ReduxIcon from '../assets/icons/Redux.svg'
-import HtmlIcon from '../assets/icons/Html.svg'
-import CssIcon from '../assets/icons/Css.svg'
-import JsIcon from '../assets/icons/Js.svg'
-import TsIcon from '../assets/icons/Ts.svg'
-import GitIcon from '../assets/icons/Git.svg'
-import BootstrapIcon from '../assets/icons/Bootstrap.svg'
-import MaterialIcon from '../assets/icons/MaterialUi.svg'
-import TailwindIcon from '../assets/icons/Tailwind.svg'
-import AntIcon from '../assets/icons/Ant.svg'
-import FormikIcon from '../assets/icons/Formik.svg'
-import JiraIcon from '../assets/icons/Jira.svg'
-import PostmanIcon from '../assets/icons/Postman.svg'
-import JqueryIcon from '../assets/icons/Jquery.svg'
+import { FaReact } from "react-icons/fa6";
+import { SiRedux } from "react-icons/si";
+import { AiOutlineHtml5 } from "react-icons/ai";
+import { IoLogoCss3 } from "react-icons/io5";
+import { FaJs } from "react-icons/fa";
+import { TbBrandTypescript } from "react-icons/tb";
+import { LiaGit } from "react-icons/lia";
+import { RiBootstrapLine } from "react-icons/ri";
+import { SiMui } from "react-icons/si";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { SiAntdesign } from "react-icons/si";
+import { SiFormik } from "react-icons/si";
+import { SiJira } from "react-icons/si";
+import { SiPostman } from "react-icons/si";
+import { DiJqueryLogo } from "react-icons/di";
+import { FaGithub } from "react-icons/fa";
+//Social icons
+import { VscGithubAlt } from "react-icons/vsc";
+import { SlSocialLinkedin } from "react-icons/sl";
+import { IoLogoInstagram } from "react-icons/io";
+import { FaWhatsapp } from "react-icons/fa";
 
 
-export const skillIcons = [
-    { src: ReactIcon, name: 'React' },
-    { src: ReduxIcon, name: 'Redux' },
-    { src: HtmlIcon, name: 'HTML' },
-    { src: CssIcon, name: 'CSS' },
-    { src: JsIcon, name: 'JavaScript' },
-    { src: TsIcon, name: 'TypeScript' },
-    { src: GitIcon, name: 'Git' },
-    { src: BootstrapIcon, name: 'Bootstrap' },
-    { src: MaterialIcon, name: 'Material-UI' },
-    { src: TailwindIcon, name: 'Tailwind CSS' },
-    { src: AntIcon, name: 'Ant Design' },
-    { src: FormikIcon, name: 'Formik' },
-    { src: JiraIcon, name: 'Jira' },
-    { src: PostmanIcon, name: 'Postman' },
-    { src: JqueryIcon, name: 'jQuery' },
+import type { ComponentType } from "react";
+
+type SkillIcon = {
+    icon: ComponentType<{ size?: number; className?: string }>;
+    name: string;
+};
+
+
+export const skillIcons: SkillIcon[] = [
+    { icon: AiOutlineHtml5, name: "HTML" },
+    { icon: IoLogoCss3, name: "CSS" },
+    { icon: RiBootstrapLine, name: "Bootstrap" },
+    { icon: RiTailwindCssFill, name: "Tailwind CSS" },
+    { icon: FaJs, name: "JavaScript" },
+    { icon: TbBrandTypescript, name: "TypeScript" },
+    { icon: FaReact, name: "React" },
+    { icon: SiRedux, name: "Redux" },
+    { icon: SiMui, name: "Material-UI" },
+    { icon: SiAntdesign, name: "Ant Design" },
+    { icon: SiFormik, name: "Formik" },
+    { icon: SiJira, name: "Jira" },
+    { icon: SiPostman, name: "Postman" },
+    { icon: LiaGit, name: "Git" },
+    { icon: DiJqueryLogo, name: "jQuery" },
+    { icon: FaGithub, name: "Github" },
+];
+
+type SocialIconsType = {
+    icon: ComponentType<{ size?: number; className?: string }>;
+    url: string;
+};
+
+export const SocialIcons: SocialIconsType[] = [
+    { icon: SlSocialLinkedin, url: "https://www.linkedin.com/in/fermayil-hesenov/" },
+    { icon: IoLogoInstagram, url: "https://www.instagram.com/23hasanovv/" },
+    { icon: FaWhatsapp, url: "https://wa.me/994706571313" },
+    { icon: VscGithubAlt, url: "https://github.com/Fermayil001" },
 ]

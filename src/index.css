@@ -18,3 +18,7 @@
     --font-mainfont: "Open Sans";
     --width-cscontainer: 68.33%;
 }
+
+html {
+    scroll-behavior: smooth;
+}
