@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "./layout/navbar/Navbar";
 import Home from "./pages/home/Home";
+import Footer from "./layout/footer/Footer";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -20,6 +21,7 @@ function App() {
     <>
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Home />
+      <Footer/>
     </>
   );
 }

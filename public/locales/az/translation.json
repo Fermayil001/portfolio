@@ -1,0 +1,32 @@
+{
+  "hero.name": "Fərmayıl",
+  "hero.surname": "Həsənov",
+  "hero.description": "Performans, dizayn və təmiz kod üzərində fokuslanan Front-End Developer",
+  "about.title": "Haqqımda",
+  "about.description": "Detallara diqqətli və özünü inkişaf etdirməyə həvəsli Front-End Developer olaraq React, TypeScript, Tailwind CSS və müasir UI kitabxanaları ilə miqyaslana bilən və istifadəyə rahat veb tətbiqlər hazırlayıram. Təmiz və performanslı kod yazmağa, dizaynların funksional interfeyslərə çevrilməsinə və API inteqrasiyalarına xüsusi önəm verirəm. Komanda ilə işləməyi və daim yeni texnologiyalar öyrənməyi sevirəm.",
+  "personalInfo": {
+    "email": "Email",
+    "location": "Ünvan",
+    "age": "Yaş",
+    "nationality": "Milliyyət",
+    "education": "Təhsil",
+    "degree": "İxtisas",
+    "values": {
+      "location": "Azərbaycan, Bakı",
+      "age": "25",
+      "nationality": "Azərbaycanlı",
+      "education": "Bakalavr dərəcəsi",
+      "degree": "Fizika müəllimi"
+    }
+  },
+  "skills.title": "Bacarıqlar",
+  "contact.title": "Əlaqə",
+  "contact.description": "Yeni layihə, əməkdaşlıq və ya texniki dəstək üçün mənimlə əlaqə saxlaya bilərsiniz. Mesajlarınıza tez bir zamanda cavab verməyə çalışıram.",
+  "contact.button": "Gmaildən yaz",
+  "navbar": {
+    "about": "Haqqımda",
+    "skill": "Bacarıqlar",
+    "contact": "Əlaqə",
+    "resume": "CV"
+  }
+}

@@ -1,13 +1,11 @@
+import { useEffect, useMemo, useState } from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { ThemeToggle } from '../../Theme'
+import { ThemeToggle } from '../../config/Theme'
+import DropDown from '../../components/buttons/DropDown'
+import { useTranslation } from 'react-i18next'
 
-const navigation = [
-    { name: 'About', href: 'about', current: true },
-    { name: 'Skill', href: 'skills', current: false },
-    { name: 'Contact', href: 'contact', current: false },
-    { name: 'Resume', href: '#', current: false },
-]
+
 
 function classNames(...classes: any) {
     return classes.filter(Boolean).join(' ')
@@ -19,8 +17,66 @@ interface NavbarProps {
 }
 
 export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
+    const [current, setCurrent] = useState('about')
+    const { i18n, t } = useTranslation();
+
+    const getInitialLanguage = (): 'en' | 'az' => {
+        const storedLang = localStorage.getItem('language');
+        return storedLang === 'az' || storedLang === 'en' ? storedLang : 'en';
+    }
+
+    const [language, setLanguage] = useState<'en' | 'az'>(getInitialLanguage);
+
+    useEffect(() => {
+        i18n.changeLanguage(language);
+        localStorage.setItem('language', language);
+    }, [language, i18n]);
+
+    const navigation = useMemo(() => [
+        { name: t('navbar.about'), href: 'about' },
+        { name: t('navbar.skill'), href: 'skills' },
+        { name: t('navbar.contact'), href: 'contact' },
+        { name: t('navbar.resume'), href: '#' },
+    ], [t]);
+
+    useEffect(() => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.6,
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setCurrent(entry.target.id)
+                }
+            })
+        }, observerOptions)
+
+        navigation.forEach(item => {
+            const section = document.getElementById(item.href)
+            if (section) {
+                observer.observe(section)
+            }
+        })
+
+        return () => {
+            navigation.forEach(item => {
+                const section = document.getElementById(item.href)
+                if (section) {
+                    observer.unobserve(section)
+                }
+            })
+        }
+    }, [])
+
+    const handleLanguageChange = (lang: { name: string; value: string }) => {
+        setLanguage(lang.value as 'en' | 'az');
+    }
+
     return (
-        <Disclosure as="nav" className="bg-csblack">
+        <Disclosure as="nav" className="bg-csblack fixed w-full z-10">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                     {/* Mobile Menu Button */}
@@ -31,9 +87,13 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
                         </DisclosureButton>
                     </div>
 
-                    {/* Right side*/}
-                    <div className=' absolute right-0 sm:left-0 justify-end mr-auto ml-auto'>
+                    {/* Right side */}
+                    <div className='absolute w-fit right-0 sm:left-0 justify-end '>
                         <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+                    </div>
+
+                    <div className="sm:flex items-center space-x-4 ml-[7%]">
+                        <DropDown onSelect={handleLanguageChange} />
                     </div>
 
                     {/* Navigation */}
@@ -44,13 +104,14 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
                                     <a
                                         key={item.name}
                                         href={`#${item.href}`}
-                                        aria-current={item.current ? 'page' : undefined}
+                                        aria-current={current === item.href ? 'page' : undefined}
                                         className={classNames(
-                                            item.current
+                                            current === item.href
                                                 ? 'bg-[#E65F78] text-white'
                                                 : 'text-[#FFFFFF] hover:bg-[#E65F78] hover:text-white',
-                                            'rounded-md px-3 py-2 text-sm font-medium',
+                                            'rounded-md px-3 py-2 text-sm font-medium cursor-pointer',
                                         )}
+                                        onClick={() => setCurrent(item.href)}
                                     >
                                         {item.name}
                                     </a>
@@ -61,6 +122,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
                 </div>
             </div>
 
+            {/* Mobile Panel */}
             <DisclosurePanel className="sm:hidden">
                 <div className="space-y-1 px-2 pt-2 pb-3">
                     {navigation.map((item) => (
@@ -68,13 +130,14 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
                             key={item.name}
                             as="a"
                             href={`#${item.href}`}
-                            aria-current={item.current ? 'page' : undefined}
+                            aria-current={current === item.href ? 'page' : undefined}
                             className={classNames(
-                                item.current
+                                current === item.href
                                     ? 'bg-[#E65F78] text-white'
                                     : 'text-gray-300 hover:bg-[#E65F78] hover:text-white',
                                 'block rounded-md px-3 py-2 text-base font-medium',
                             )}
+                            onClick={() => setCurrent(item.href)}
                         >
                             {item.name}
                         </DisclosureButton>
@@ -82,5 +145,5 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
                 </div>
             </DisclosurePanel>
         </Disclosure>
-    );
+    )
 }

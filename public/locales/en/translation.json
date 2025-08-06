@@ -1,0 +1,32 @@
+{
+    "hero.name": "Fermayil",
+    "hero.surname": "Hesenov",
+    "hero.description": "Front-End Developer focused on performance, design, and clean code.",
+    "about.title": "About Me",
+    "about.description": "I’m a detail-oriented and self-driven Front-End Developer passionate about building scalable and user-friendly web applications using React, TypeScript, and modern UI libraries. I focus on writing clean code, transforming designs into functional interfaces, and integrating APIs. I enjoy teamwork and continuously strive to improve my skills and deliver impactful digital experiences.",
+    "personalInfo": {
+        "email": "Email",
+        "location": "Location",
+        "age": "Age",
+        "nationality": "Nationality",
+        "education": "Education",
+        "degree": "Degree",
+        "values": {
+            "location": "Azerbaijan, Baku",
+            "age": "25",
+            "nationality": "Azerbaijani",
+            "education": "Bachelor's Degree",
+            "degree": "Physics teacher"
+        }
+    },
+    "skills.title": "Skills",
+    "contact.title": "Contact",
+    "contact.description": "Whether it’s a new project, collaboration opportunity, or a technical question — feel free to reach out. I aim to respond as promptly as possible.",
+    "contact.button": "Contact me with gmail",
+    "navbar": {
+        "about": "About",
+        "skill": "Skills",
+        "contact": "Contact",
+        "resume": "Resume"
+    }
+}

@@ -1,8 +1,11 @@
 import Section from '../../../components/custom/Section'
 import Container from '../../../components/custom/Container'
 import { SocialIcons } from '../../../data/Data';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+
+    const { t } = useTranslation();
 
     const handleClick = () => {
         const email = 'fermayilhsnv57@gmail.com';
@@ -16,16 +19,17 @@ const Contact = () => {
 
     return (
         <Section id='contact'>
-            <Container title='Contact'>
+            <Container title={t("contact.title")}>
                 <div className='w-full mx-auto max-w-[544px] space-y-[90px] flex flex-col items-center'>
                     <p className='text-[20px] font-mainfont text-center'>
-                        I am currently seeking employment, so if you have a job or project offer, or if you need more information, please do not hesitate to contact me.
+                        {t("contact.description")}
                     </p>
+
                     <button
                         onClick={handleClick}
-                        className='w-full cursor-pointer max-w-[180px] h-[43px] bg-csred active:bg-csred/80 hover:bg-csred/60 text-cswhite rounded-md'
+                        className='w-full transition-all duration-300 cursor-pointer max-w-[180px] h-[43px] bg-csred active:bg-csred/100 hover:bg-csred/80 text-cswhite rounded-md'
                     >
-                        Contact me with gmail
+                        {t("contact.button")}
                     </button>
                     <div className="flex gap-x-4 items-center justify-center">
                         {SocialIcons.map(({ icon: Icon, url }) => (
