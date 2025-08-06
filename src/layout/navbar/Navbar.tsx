@@ -3,11 +3,9 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ThemeToggle } from '../../Theme'
 
 const navigation = [
-    { name: 'About', href: '#', current: true },
-    { name: 'Experience', href: '#', current: false },
+    { name: 'About', href: 'about', current: true },
     { name: 'Skill', href: 'skills', current: false },
-    { name: 'Portfolio', href: '#', current: false },
-    { name: 'Contact', href: '#', current: false },
+    { name: 'Contact', href: 'contact', current: false },
     { name: 'Resume', href: '#', current: false },
 ]
 
@@ -26,20 +24,20 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                     {/* Mobile Menu Button */}
-                    <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <div className="flex items-center justify-end sm:hidden">
                         <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-[#FFFFFF] hover:bg-[#E65F78] hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
                             <Bars3Icon className="block size-6 group-data-open:hidden" />
                             <XMarkIcon className="hidden size-6 group-data-open:block" />
                         </DisclosureButton>
                     </div>
 
-                    {/* Right side (Avatar + Toggle) */}
-                    <div>
+                    {/* Right side*/}
+                    <div className=' absolute right-0 sm:left-0 justify-end mr-auto ml-auto'>
                         <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
                     </div>
 
                     {/* Navigation */}
-                    <div className="flex flex-1 items-center justify-end sm:items-stretch sm:justify-end">
+                    <div className="flex flex-1 justify-end items-center">
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
@@ -69,7 +67,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
                         <DisclosureButton
                             key={item.name}
                             as="a"
-                            href={item.href}
+                            href={`#${item.href}`}
                             aria-current={item.current ? 'page' : undefined}
                             className={classNames(
                                 item.current

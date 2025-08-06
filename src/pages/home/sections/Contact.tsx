@@ -15,7 +15,7 @@ const Contact = () => {
     };
 
     return (
-        <Section>
+        <Section id='contact'>
             <Container title='Contact'>
                 <div className='w-full mx-auto max-w-[544px] space-y-[90px] flex flex-col items-center'>
                     <p className='text-[20px] font-mainfont text-center'>
