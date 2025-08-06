@@ -17,12 +17,12 @@ interface NavbarProps {
 }
 
 export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
-    const [current, setCurrent] = useState('about')
+    const [current, setCurrent] = useState('')
     const { i18n, t } = useTranslation();
 
     const getInitialLanguage = (): 'en' | 'az' => {
         const storedLang = localStorage.getItem('language');
-        return storedLang === 'az' || storedLang === 'en' ? storedLang : 'en';
+        return storedLang === 'az' || storedLang === 'en' ? storedLang : 'az';
     }
 
     const [language, setLanguage] = useState<'en' | 'az'>(getInitialLanguage);
