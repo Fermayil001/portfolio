@@ -15,7 +15,7 @@ interface NavbarProps {
     darkMode: boolean;
     toggleDarkMode: () => void;
 }
-
+// import sda from '../../../public/Fermayil Hesenov CV.pdf'
 export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
     const [current, setCurrent] = useState('')
     const { i18n, t } = useTranslation();
@@ -36,7 +36,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
         { name: t('navbar.about'), href: 'about' },
         { name: t('navbar.skill'), href: 'skills' },
         { name: t('navbar.contact'), href: 'contact' },
-        { name: t('navbar.resume'), href: '#' },
+        { name: t('navbar.resume'), href: '/public/Fermayil-Hesenov-CV.pdf', external: true },
     ], [t]);
 
     useEffect(() => {
@@ -92,7 +92,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
                         <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
                     </div>
 
-                    <div className="sm:flex items-center space-x-4 ml-[7%]">
+                    <div className="sm:flex items-center space-x-4 ml-0 sm:ml-[13%] md:ml-[7%]">
                         <DropDown onSelect={handleLanguageChange} />
                     </div>
 
@@ -101,21 +101,37 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
-                                    <a
-                                        key={item.name}
-                                        href={`#${item.href}`}
-                                        aria-current={current === item.href ? 'page' : undefined}
-                                        className={classNames(
-                                            current === item.href
-                                                ? 'bg-[#E65F78] text-white'
-                                                : 'text-[#FFFFFF] hover:bg-[#E65F78] hover:text-white',
-                                            'rounded-md px-3 py-2 text-sm font-medium cursor-pointer',
-                                        )}
-                                        onClick={() => setCurrent(item.href)}
-                                    >
-                                        {item.name}
-                                    </a>
+                                    item.external ? (
+                                        <a
+                                            key={item.name}
+                                            href={item.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={classNames(
+                                                'text-[#FFFFFF] hover:bg-[#E65F78] hover:text-white',
+                                                'rounded-md px-3 py-2 text-sm font-medium cursor-pointer'
+                                            )}
+                                        >
+                                            {item.name}
+                                        </a>
+                                    ) : (
+                                        <a
+                                            key={item.name}
+                                            href={`#${item.href}`}
+                                            aria-current={current === item.href ? 'page' : undefined}
+                                            className={classNames(
+                                                current === item.href
+                                                    ? 'bg-[#E65F78] text-white'
+                                                    : 'text-[#FFFFFF] hover:bg-[#E65F78] hover:text-white',
+                                                'rounded-md px-3 py-2 text-sm font-medium cursor-pointer'
+                                            )}
+                                            onClick={() => setCurrent(item.href)}
+                                        >
+                                            {item.name}
+                                        </a>
+                                    )
                                 ))}
+
                             </div>
                         </div>
                     </div>
