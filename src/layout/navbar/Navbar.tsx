@@ -36,7 +36,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
         { name: t('navbar.about'), href: 'about' },
         { name: t('navbar.skill'), href: 'skills' },
         { name: t('navbar.contact'), href: 'contact' },
-        { name: t('navbar.resume'), href: '/public/Fermayil-Hesenov-CV.pdf', external: true },
+        { name: t('navbar.resume'), href: '/Fermayil-Hesenov-CV.pdf', external: true },
     ], [t]);
 
     useEffect(() => {
@@ -92,7 +92,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
                         <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
                     </div>
 
-                    <div className="sm:flex items-center space-x-4 ml-0 sm:ml-[13%] md:ml-[7%]">
+                    <div className="sm:flex items-center space-x-4 ml-2 sm:ml-[13%] md:ml-[7%]">
                         <DropDown onSelect={handleLanguageChange} />
                     </div>
 
@@ -140,24 +140,38 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
 
             {/* Mobile Panel */}
             <DisclosurePanel className="sm:hidden">
-                <div className="space-y-1 px-2 pt-2 pb-3">
+                <div className="space-y-1 px-2 pt-2 pb-3 ">
                     {navigation.map((item) => (
-                        <DisclosureButton
-                            key={item.name}
-                            as="a"
-                            href={`#${item.href}`}
-                            aria-current={current === item.href ? 'page' : undefined}
-                            className={classNames(
-                                current === item.href
-                                    ? 'bg-[#E65F78] text-white'
-                                    : 'text-gray-300 hover:bg-[#E65F78] hover:text-white',
-                                'block rounded-md px-3 py-2 text-base font-medium',
-                            )}
-                            onClick={() => setCurrent(item.href)}
-                        >
-                            {item.name}
-                        </DisclosureButton>
+                        item.external ? (
+                            <DisclosureButton
+                                key={item.name}
+                                as="a"
+                                href={item.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-[#E65F78] hover:text-white"
+                            >
+                                {item.name}
+                            </DisclosureButton>
+                        ) : (
+                            <DisclosureButton
+                                key={item.name}
+                                as="a"
+                                href={`#${item.href}`}
+                                aria-current={current === item.href ? 'page' : undefined}
+                                className={classNames(
+                                    current === item.href
+                                        ? 'bg-[#E65F78] text-white'
+                                        : 'text-gray-300 hover:bg-[#E65F78] hover:text-white',
+                                    'block rounded-md px-3 py-2 text-base font-medium'
+                                )}
+                                onClick={() => setCurrent(item.href)}
+                            >
+                                {item.name}
+                            </DisclosureButton>
+                        )
                     ))}
+
                 </div>
             </DisclosurePanel>
         </Disclosure>
