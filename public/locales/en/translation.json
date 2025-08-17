@@ -1,7 +1,7 @@
 {
     "hero.name": "Fermayil",
     "hero.surname": "Hesenov",
-    "hero.description": "Front-End Developer focused on performance, design, and clean code.",
+    "hero.description": "Front-End Developer focused on performance, design, and clean code. ",
     "about.title": "About Me",
     "about.description": "I’m a detail-oriented and self-driven Front-End Developer passionate about building scalable and user-friendly web applications using React, TypeScript, and modern UI libraries. I focus on writing clean code, transforming designs into functional interfaces, and integrating APIs. I enjoy teamwork and continuously strive to improve my skills and deliver impactful digital experiences.",
     "personalInfo": {
@@ -26,6 +26,7 @@
     "navbar": {
         "about": "About",
         "skill": "Skills",
+        "portfolio": "Portfolio",
         "contact": "Contact",
         "resume": "Resume"
     }

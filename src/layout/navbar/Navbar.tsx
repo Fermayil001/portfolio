@@ -35,6 +35,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
     const navigation = useMemo(() => [
         { name: t('navbar.about'), href: 'about' },
         { name: t('navbar.skill'), href: 'skills' },
+        { name: t('navbar.portfolio'), href: 'portfolio' },
         { name: t('navbar.contact'), href: 'contact' },
         { name: t('navbar.resume'), href: '/Fermayil-Hesenov-CV.pdf', external: true },
     ], [t]);

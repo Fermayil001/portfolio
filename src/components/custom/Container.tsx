@@ -15,7 +15,7 @@ const Container = ({ children, title }: { children: ReactNode, title: string }) 
                 viewport={{ once: true, amount: 0.5 }}
             >
                 <div className="mt-[120px] mb-[0px] lg:mb-[90px]">
-                    <h2 className="font-extrabold h-[65px] flex items-center font-mainfont text-3xl lg:text-5xl dark:text-cswhite text-black">{title}</h2>
+                    <h2 className=" h-[65px] flex items-center font-mainfont text-3xl lg:text-5xl dark:text-cswhite text-black font-extrabold">{title}</h2>
                     <div className="w-[60px] h-1 mx-auto mt-3 bg-csred"></div>
                 </div>
             </motion.div>
@@ -27,8 +27,8 @@ const Container = ({ children, title }: { children: ReactNode, title: string }) 
                     duration: 0.4,
                     ease: "easeOut",
                 }}
-                viewport={{ once: true, amount: 0.5 }}
-                className="w-full mx-auto "
+                viewport={{ once: true, amount: 0.1 }}
+                className="w-full mx-auto h-full"
             >
                 {children}
             </motion.div>

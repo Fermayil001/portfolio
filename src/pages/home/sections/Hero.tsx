@@ -2,6 +2,7 @@ import MyPhoto from '../../../assets/images/1730584660411-02.jpeg'
 import { HiChevronDoubleDown } from "react-icons/hi2";
 import { motion } from "framer-motion";
 import { useTranslation } from 'react-i18next';
+import AnimatedText from '../../../components/custom/AnimatedText';
 
 
 const Hero = () => {
@@ -19,7 +20,11 @@ const Hero = () => {
                     <h1 className='text-[40px] text-center md:text-left md:text-[40px] lg:text-[72px] dark:text-cswhite font-mainfont font-extrabold'>{t("hero.name")}
                         <span className='text-[#E65F78]'> {t("hero.surname")}</span>
                     </h1>
-                    <h5 className='text-2xl italic ml-2 text-center text-light dark:text-cswhite leading-6 font-light'>{t("hero.description")}</h5>
+                    <AnimatedText
+                        speed={50}
+                        text={t("hero.description")}
+                        className="text-2xl italic ml-2 text-center text-light dark:text-cswhite leading-6 font-light"
+                    />
 
                 </div>
             </div>
