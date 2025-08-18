@@ -47,7 +47,7 @@ const Skills = () => {
                         >
                             <Icon
                                 size={70}
-                                className="text-csblack dark:text-cswhite drop-shadow-lg drop-shadow-csred/50"
+                                className="text-csblack dark:text-cswhite drop-shadow-lg drop-shadow-csred/30"
                             />
                             <span>{name}</span>
                         </motion.div>
