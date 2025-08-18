@@ -23,7 +23,7 @@ const Skills = () => {
             y: 0,
             transition: {
                 duration: 0.4,
-                ease: [0.42, 0, 0.58, 1], // "easeOut" tipik cubic bezier olaraq
+                ease: [0.42, 0, 0.58, 1],
             },
         },
     };

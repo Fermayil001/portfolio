@@ -15,21 +15,15 @@ interface NavbarProps {
     darkMode: boolean;
     toggleDarkMode: () => void;
 }
-// import sda from '../../../public/Fermayil Hesenov CV.pdf'
+
 export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
-    const [current, setCurrent] = useState('')
+    const [current, setCurrent] = useState<string>('')
     const { i18n, t } = useTranslation();
 
-    const getInitialLanguage = (): 'en' | 'az' => {
-        const storedLang = localStorage.getItem('language');
-        return storedLang === 'az' || storedLang === 'en' ? storedLang : 'az';
-    }
-
-    const [language, setLanguage] = useState<'en' | 'az'>(getInitialLanguage);
+    const [language, setLanguage] = useState<'en' | 'az'>('az');
 
     useEffect(() => {
         i18n.changeLanguage(language);
-        localStorage.setItem('language', language);
     }, [language, i18n]);
 
     const navigation = useMemo(() => [
