@@ -21,6 +21,7 @@ const Hero = () => {
                         <span className='text-[#E65F78]'> {t("hero.surname")}</span>
                     </h1>
                     <AnimatedText
+                        key={t("hero.description")}
                         speed={50}
                         text={t("hero.description")}
                         className="text-2xl italic ml-2 text-center text-light dark:text-cswhite leading-6 font-light"
