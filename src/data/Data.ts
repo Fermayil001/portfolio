@@ -88,7 +88,7 @@ export const portfolioData: PortfolioData[] = [
     {
         name: 'AgilePulse',
         imgUrl: Agile,
-        url: 'https://agilepulse.netlify.app/',
+        url: 'https://agilepulse.org/',
         description: {
             az: 'AgilePulse layihəsi çevik idarəetmə və təlim proseslərini asanlaşdırmaq üçün hazırlanmış veb platformadır. İstifadəçilər burada təlimlərə qoşula, imtahanlar verə və Agile ilə bağlı müxtəlif kitabları oxuya bilərlər. Platforma həmçinin admin paneli vasitəsilə məzmun və istifadəçi idarəetməsini təmin edir.',
             en: 'AgilePulse is a web platform designed to facilitate agile management and training processes. Users can join training sessions, take exams, and read various books related to Agile. The platform also provides content and user management through an admin panel.'
