@@ -31,3 +31,16 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* App.css və ya müvafiq CSS faylında */
+.slick-slide {
+  padding: 0 10px; /* hər slaydın sağ-soluna 10px boşluq əlavə edir */
+}
+
+.slick-list {
+  margin: 0 -10px; /* ümumi düzülüşü balanslaşdırır */
+}
+
+.slick-dots{
+    bottom: -0px !important;
+}

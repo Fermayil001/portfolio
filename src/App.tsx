@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Navbar from "./layout/navbar/Navbar";
 import Home from "./pages/home/Home";
 import Footer from "./layout/footer/Footer";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -21,7 +23,7 @@ function App() {
     <>
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Home />
-      <Footer/>
+      <Footer />
     </>
   );
 }

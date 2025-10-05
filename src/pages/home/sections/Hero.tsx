@@ -1,4 +1,4 @@
-import MyPhoto from '../../../assets/images/1730584660411-02.jpeg'
+import MyPhoto from '../../../assets/images/me.jpg'
 import { HiChevronDoubleDown } from "react-icons/hi2";
 import { motion } from "framer-motion";
 import { useTranslation } from 'react-i18next';
@@ -13,7 +13,7 @@ const Hero = () => {
         <div className='bg-cswhite overflow-hidden w-full dark:bg-csblack min-h-screen flex flex-col  items-center justify-center'>
             <div className='flex my-auto flex-col md:flex-row md:pt-0 items-center gap-x-[50px]'>
                 <span className="w-[150px] h-[150px] rounded-full overflow-hidden inline-block">
-                    <img src={MyPhoto} className="w-full h-full object-contain" alt="" />
+                    <img src={MyPhoto} className="w-full h-full object-cover" alt="" />
                 </span>
 
                 <div>

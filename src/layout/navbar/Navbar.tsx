@@ -37,8 +37,8 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
     useEffect(() => {
         const observerOptions = {
             root: null,
-            rootMargin: '0px',
-            threshold: 0.6,
+            rootMargin: '-100px 0px -200px 0px',
+            threshold: 0.3,
         }
 
         const observer = new IntersectionObserver((entries) => {
@@ -50,21 +50,24 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
         }, observerOptions)
 
         navigation.forEach(item => {
-            const section = document.getElementById(item.href)
-            if (section) {
-                observer.observe(section)
+            if (!item.external) {
+                const section = document.getElementById(item.href)
+              /*   console.log(section, 'sec')
+                console.log(item.href, 'item.href') */
+                if (section) observer.observe(section)
             }
         })
 
         return () => {
             navigation.forEach(item => {
-                const section = document.getElementById(item.href)
-                if (section) {
-                    observer.unobserve(section)
+                if (!item.external) {
+                    const section = document.getElementById(item.href)
+                    if (section) observer.unobserve(section)
                 }
             })
         }
-    }, [])
+    }, [navigation])
+
 
     const handleLanguageChange = (lang: { name: string; value: string }) => {
         setLanguage(lang.value as 'en' | 'az');
