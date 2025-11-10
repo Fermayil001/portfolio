@@ -31,7 +31,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
         { name: t('navbar.skill'), href: 'skills' },
         { name: t('navbar.portfolio'), href: 'portfolio' },
         { name: t('navbar.contact'), href: 'contact' },
-        { name: t('navbar.resume'), href: '/Fermayil-Hesenov-CV.pdf', external: true },
+        { name: t('navbar.resume'), href: '/FarmayilHasanovCv.pdf', external: true },
     ], [t]);
 
     useEffect(() => {
