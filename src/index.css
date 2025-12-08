@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-@font-face {
+/* @font-face {
     font-display: swap;
     font-family: 'Open Sans';
     font-style: normal;
@@ -17,7 +17,17 @@
     font-weight: 800;
     src: url('./assets/fonts/Open Sans/open-sans-v43-latin-ext-800.woff2') format('woff2'),
         url('./assets/fonts/Open Sans/open-sans-v43-latin-800.woff2') format('woff2');
+} */
+
+@font-face {
+    font-display: swap;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/poppins-v23-latin_latin-ext-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 
 @theme {
     --color-csblack: #1F1F1F;
@@ -34,13 +44,15 @@ html {
 
 /* App.css və ya müvafiq CSS faylında */
 .slick-slide {
-  padding: 0 10px; /* hər slaydın sağ-soluna 10px boşluq əlavə edir */
+    padding: 0 10px;
+    /* hər slaydın sağ-soluna 10px boşluq əlavə edir */
 }
 
 .slick-list {
-  margin: 0 -10px; /* ümumi düzülüşü balanslaşdırır */
+    margin: 0 -10px;
+    /* ümumi düzülüşü balanslaşdırır */
 }
 
-.slick-dots{
+.slick-dots {
     bottom: -0px !important;
 }

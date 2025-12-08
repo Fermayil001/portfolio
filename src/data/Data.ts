@@ -14,6 +14,10 @@ import { SiJira } from "react-icons/si";
 import { SiPostman } from "react-icons/si";
 import { DiJqueryLogo } from "react-icons/di";
 import { FaGithub } from "react-icons/fa";
+import { RiNextjsFill } from "react-icons/ri";
+import { SiShadcnui } from "react-icons/si";
+import { SiZod } from "react-icons/si";
+import { SiPrisma } from "react-icons/si";
 //Social icons
 import { VscGithubAlt } from "react-icons/vsc";
 import { SlSocialLinkedin } from "react-icons/sl";
@@ -23,6 +27,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import Eduguide from '../assets/images/eduguide.png'
 import Agile from '../assets/images/agile.png'
 import Movie from '../assets/images/movie.png'
+import Trendora from '../assets/images/Trendora.png'
 
 import type { ComponentType } from "react";
 
@@ -40,12 +45,16 @@ export const skillIcons: SkillIcon[] = [
     { icon: FaJs, name: "JavaScript" },
     { icon: TbBrandTypescript, name: "TypeScript" },
     { icon: FaReact, name: "React" },
+    { icon: RiNextjsFill, name: "Next.js" },
     { icon: SiRedux, name: "Redux" },
     { icon: SiMui, name: "Material-UI" },
+    { icon: SiShadcnui, name: "Shadcn UI" },
     { icon: SiAntdesign, name: "Ant Design" },
     { icon: SiFormik, name: "Formik" },
+    { icon: SiZod, name: "Zod" },
     { icon: SiJira, name: "Jira" },
     { icon: SiPostman, name: "Postman" },
+    { icon: SiPrisma, name: "Prisma" },
     { icon: LiaGit, name: "Git" },
     { icon: DiJqueryLogo, name: "jQuery" },
     { icon: FaGithub, name: "Github" },
@@ -94,6 +103,16 @@ export const portfolioData: PortfolioData[] = [
             en: 'AgilePulse is a web platform designed to facilitate agile management and training processes. Users can join training sessions, take exams, and read various books related to Agile. The platform also provides content and user management through an admin panel.'
         },
         techStack: 'React, TypeScript, Vite, Redux Toolkit, React Redux, React Router DOM, React Hook Form, Formik, Yup, i18next, react-i18next, Day.js, html-to-image, react-pdf, pdfjs-dist, Tailwind CSS, Sass, Material-UI, Framer Motion, React Icons, MUI X Charts, React Minimal Pie Chart, React-Toastify, SweetAlert2, Embla Carousel, React Slick, Slick Carousel',
+    },
+    {
+        name: 'Trendora E-commerce',
+        imgUrl: Trendora,
+        url: 'https://trendora-indol.vercel.app/',
+        description: {
+            az: 'Trendora Next.js (app dir) və TypeScript istifadə edərək hazırlanmış tam funksional e-ticarət platformasıdır. İstifadəçi qeydiyyatı, məhsul səhifələri, səbət və sifariş axını, wishlist, məhsul rəyləri və admin üçün idarəetmə paneli dəstəklənir. Backend üçün API routeları və Prisma ilə verilənlər bazası inteqrasiyası mövcuddur.',
+            en: 'Trendora is a fully functional e-commerce platform built with Next.js (App Router) and TypeScript. It includes user authentication, product pages, cart and checkout flow, wishlist functionality, product reviews, and an admin dashboard for management. The backend is powered by API Routes and a Prisma-integrated database structure.'
+        },
+        techStack: 'Next.js, React, TypeScript, MUI, Tailwind CSS, Emotion, Next.js API Routes, NextAuth, Zustand, React Query, Prisma, MongoDB, Formidable, Cloudinary, Bcrypt, Formik, Yup, React Icons, Swiper, React Toastify, Day.js, ESLint, Vercel',
     },
     {
         name: 'Movie Land',

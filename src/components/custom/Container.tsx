@@ -15,8 +15,8 @@ const Container = ({ children, title, enableMotion = true }: { children: ReactNo
                 viewport={{ once: true, amount: 0.5 }}
             >
                 <div className="mt-[120px] mb-[0px] lg:mb-[20px]">
-                    <h2 className=" h-[65px] flex items-center font-mainfont text-3xl lg:text-5xl dark:text-cswhite text-black font-extrabold">{title}</h2>
-                    <div className="w-[60px] h-1 mx-auto mt-3 bg-csred"></div>
+                    <h2 className=" h-[60x] flex items-center font-mainfont text-3xl lg:text-5xl dark:text-cswhite text-black font-extrabold">{title}</h2>
+                    <div className="w-[100px] h-1 mx-auto mt-5 bg-csred"></div>
                 </div>
             </motion.div>
 
